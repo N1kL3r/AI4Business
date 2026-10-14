@@ -1,0 +1,12 @@
+# Company data stays out of this public repo (data agreement with YC).
+data/inbox/
+data/test_cases/
+data/lake/
+
+# Executed notebooks contain email contents in their outputs.
+*.executed.ipynb
+
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
