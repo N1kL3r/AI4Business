@@ -65,7 +65,7 @@ class Extraction(BaseModel):
 
     header: dict[str, Field] = PydField(default_factory=dict)
     items: list[dict[str, Field]] = PydField(default_factory=list)
-    extractor: str = ""  # which extractor produced this (e.g. "baseline", "ollama:qwen2.5:7b")
+    extractor: str = ""  # which extractor produced this (e.g. "baseline (rules)", "ollama:qwen3.5:9b")
 
     def complete(self) -> "Extraction":
         """Make sure every template field exists; anything the extractor skipped counts as missing."""

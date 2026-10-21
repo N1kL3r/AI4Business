@@ -26,7 +26,7 @@ pip install -r requirements.txt
 For the LLM part, install [Ollama](https://ollama.com) and pull a model (runs locally, free, no data leaves the laptop):
 
 ```bash
-ollama pull qwen2.5:7b
+ollama pull qwen3.5:9b      # or qwen3.5:4b on a laptop with 8 GB RAM
 ```
 
 Then open `notebooks/01_extraction.ipynb`. Without Ollama the notebook still runs on the rule-based baseline.

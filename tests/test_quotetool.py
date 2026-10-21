@@ -77,6 +77,8 @@ def test_extract_llm_round_trip_with_simulated_ollama(monkeypatch, tmp_path):
     sent = {}
 
     class FakeResponse:
+        status_code, text = 200, ""
+
         def raise_for_status(self):
             pass
 
@@ -91,7 +93,7 @@ def test_extract_llm_round_trip_with_simulated_ollama(monkeypatch, tmp_path):
     config = llm.LLMConfig()
     ex = extract.extract_llm(EMAIL, config, cache_dir=tmp_path)
     assert sent["url"].endswith("/api/chat") and sent["payload"]["format"]["required"] == ["header", "items"]
-    assert ex.items[0]["quantity"].value == 10 and ex.extractor == "ollama:qwen2.5:7b"
+    assert ex.items[0]["quantity"].value == 10 and ex.extractor == config.name
 
     monkeypatch.setattr(llm.requests, "post", lambda *a, **k: (_ for _ in ()).throw(AssertionError("not cached")))
     assert extract.extract_llm(EMAIL, config, cache_dir=tmp_path).items[0]["part_number"].value == "XY-7A"
@@ -116,3 +118,30 @@ def test_dates_and_translations_are_not_rejected():
     assert value_in_evidence("material", "bronze", "附件是泵用的铜密封件") is None  # cannot tell: review
     assert value_in_evidence("quantity", 144, "SET  144")
     assert not value_in_evidence("quantity", 1, "4P100346      RNG/LANTERN/4.00")
+
+
+def test_thinking_is_switched_off_and_stripped(monkeypatch):
+    from quotetool import llm
+
+    calls = []
+
+    class Resp:
+        def __init__(self, status, body):
+            self.status_code, self._body, self.text = status, body, json.dumps(body)
+
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return self._body
+
+    def fake_post(url, json=None, timeout=None, **kw):
+        calls.append(dict(json))
+        if "think" in json:  # simulate a model without a thinking switch
+            return Resp(400, {"error": "model does not support thinking"})
+        return Resp(200, {"message": {"content": "<think>hmm {not json}</think>\n{\"ok\": 1}"}})
+
+    monkeypatch.setattr(llm.requests, "post", fake_post)
+    out = llm.complete(llm.LLMConfig(), "s", "u")
+    assert calls[0]["think"] is False and "think" not in calls[1]
+    assert out == '{"ok": 1}'
