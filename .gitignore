@@ -2,6 +2,7 @@
 data/inbox/
 data/test_cases/
 data/lake/
+group14_sample_data.zip
 
 # Executed notebooks contain email contents in their outputs.
 *.executed.ipynb
