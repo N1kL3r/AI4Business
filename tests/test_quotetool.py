@@ -145,3 +145,14 @@ def test_thinking_is_switched_off_and_stripped(monkeypatch):
     out = llm.complete(llm.LLMConfig(), "s", "u")
     assert calls[0]["think"] is False and "think" not in calls[1]
     assert out == '{"ok": 1}'
+
+
+def test_value_linked_to_an_attachment_is_accepted():
+    """Real qwen3.5:9b output: text says 'drawing D2365', value is the attachment file name."""
+    email = Email(case_id="t", text="Attachments: D2365 REV-1.pdf\n\nQty 1, Part G42D2365, to our drawing D2365.",
+                  headers={"attachments": "D2365 REV-1.pdf"})
+    ex = parse_reply(reply(drawing_ref=field("D2365 REV-1.pdf", evidence="drawing D2365"),
+                           material=field("C95510", evidence="drawing D2365")))
+    item = check(ex, email).extraction.items[0]
+    assert item["drawing_ref"].status == Status.FOUND
+    assert item["material"].status == Status.MISSING  # not in the email at all: still rejected

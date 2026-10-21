@@ -100,6 +100,18 @@ def value_in_evidence(name: str, value, evidence: str) -> bool | None:
     return False
 
 
+def _links_to_email_text(value, evidence: str, text: str) -> bool:
+    """A value taken from elsewhere in the email and linked through the evidence, e.g. the text says
+    "drawing D2365" and the value is the attachment "D2365 REV-1.pdf". Text values only, never numbers."""
+    if not isinstance(value, str) or len(value) < 4:
+        return False
+    flat = lambda s: re.sub(r"[^0-9a-z]", "", s.lower())
+    if flat(value) not in flat(text):
+        return False
+    shared = set(re.findall(r"[a-z0-9]{3,}", value.lower())) & set(re.findall(r"[a-z0-9]{3,}", evidence.lower()))
+    return any(re.search(r"\d", t) for t in shared)  # share a code like d2365, not just a common word
+
+
 def _verify(name: str, f: Field, email: Email) -> None:
     """Downgrade a field's status if the claim does not hold up. Changes the field in place."""
     if f.status in (Status.FOUND, Status.NEEDS_REVIEW) and (
@@ -115,6 +127,8 @@ def _verify(name: str, f: Field, email: Email) -> None:
         f.status, f.note = Status.NEEDS_REVIEW, "evidence not found in the email text: possibly invented"
         return
     supported = value_in_evidence(name, f.value, f.evidence)
+    if supported is False and _links_to_email_text(f.value, f.evidence, email.text):
+        supported = True
     if supported is False:
         # The quoted text is real but does not contain the value: the model filled it in itself.
         f.status, f.note = Status.MISSING, f"model suggested {f.value!r}, but the quoted text does not say so"
