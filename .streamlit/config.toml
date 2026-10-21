@@ -1,0 +1,11 @@
+[browser]
+# Do not send usage statistics to Streamlit: inquiry data stays on this computer.
+gatherUsageStats = false
+
+[client]
+# Hide the developer menu and the "Deploy" button for sales users.
+toolbarMode = "viewer"
+
+[server]
+# Uploaded emails are small; refuse anything unusually large.
+maxUploadSize = 25

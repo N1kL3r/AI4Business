@@ -44,15 +44,43 @@ class CheckResult:
 
 
 def _norm_tokens(text: str) -> list[str]:
-    return re.findall(r"[\w.\-/#]+|[^\w\s]", text.lower())
+    tokens = re.findall(r"[\w.\-/#]+|[^\w\s]", text.lower())
+    return [t.rstrip(".") or t for t in tokens]  # "material." and "material" are the same word
+
+
+def _piece_in_text(piece: str, text: str) -> bool:
+    """Exact match (ignoring spacing), else the words in order with small gaps
+    (table columns can interleave text from the next column)."""
+    if " ".join(piece.lower().split()) in " ".join(text.lower().split()):
+        return True
+    ev_tokens, tokens = _norm_tokens(piece), _norm_tokens(text)
+    if not ev_tokens:
+        return True
+    max_span = 2 * len(ev_tokens) + 5
+    for start in (i for i, t in enumerate(tokens) if t == ev_tokens[0]):
+        j, pos = 1, start + 1
+        while j < len(ev_tokens) and pos < len(tokens) and pos - start < max_span:
+            if tokens[pos] == ev_tokens[j]:
+                j += 1
+            pos += 1
+        if j == len(ev_tokens):
+            return True
+    return False
 
 
 def evidence_in_text(evidence: str, text: str) -> bool:
-    """Is the evidence really in the email? Exact match first, then words in order with small gaps
-    (table columns can interleave text from the next column)."""
-    ev = " ".join(evidence.lower().split())
-    if ev in " ".join(text.lower().split()):
+    """Is the evidence really in the email?"""
+    if _piece_in_text(evidence, text):
         return True
+    pieces = [p for p in re.split(r"\.\.\.|…", evidence) if p.strip()]  # model shortened a quote with "..."
+    if len(pieces) > 1:
+        return all(_piece_in_text(p, text) for p in pieces)
+    # Table cell quoted with its column header, e.g. "QTY 144": the header word and the cell are on
+    # different lines. Accept when the header word is in the email and the rest is found on its own.
+    words = evidence.split(maxsplit=1)
+    if len(words) == 2 and re.fullmatch(r"[A-Za-z]{2,12}:?", words[0]):
+        return _piece_in_text(words[0].rstrip(":"), text) and _piece_in_text(words[1], text)
+    return False
     for piece in re.split(r"\.\.\.|…", evidence):  # model shortened a quote with "..."
         ev_tokens, tokens = _norm_tokens(piece), _norm_tokens(text)
         if not ev_tokens:

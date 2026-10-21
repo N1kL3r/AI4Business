@@ -156,3 +156,26 @@ def test_value_linked_to_an_attachment_is_accepted():
     item = check(ex, email).extraction.items[0]
     assert item["drawing_ref"].status == Status.FOUND
     assert item["material"].status == Status.MISSING  # not in the email at all: still rejected
+
+
+def test_eml_file_keeps_headers_body_and_attachment_names():
+    from email.message import EmailMessage
+    from quotetool.emails import parse_eml
+
+    msg = EmailMessage()
+    msg["From"], msg["Subject"], msg["Date"] = "A.B. <a@example.com>", "RFQ 7", "Tue, 3 Mar 2026 10:00:00 +0000"
+    msg.set_content("Please quote 10 pcs of part XY-7A.")
+    msg.add_attachment(b"%PDF", maintype="application", subtype="pdf", filename="7A.pdf")
+    email = parse_eml(msg.as_bytes(), "t")
+    assert email.headers["subject"] == "RFQ 7" and email.attachments == ["7A.pdf"]
+    assert "10 pcs of part XY-7A" in email.body
+
+
+def test_table_header_and_shortened_quotes_are_found():
+    """Real qwen3.5:9b evidence on a table email: 'QTY 144' and a quote shortened with '...'."""
+    text = ("Item   UOM QTY Grade\nXY-7A  SET 144 C95510\n\nused along with C63000 material.\n"
+            "The alloy can\nbe used as a substitute for C63000 in many applications.")
+    assert evidence_in_text("QTY 144", text) and evidence_in_text("UOM SET", text)
+    assert evidence_in_text("along with C63000 material... The alloy can be used as a substitute for C63000", text)
+    assert not evidence_in_text("QTY 500", text)
+    assert not evidence_in_text("along with C63000 material... we need 500 pieces", text)

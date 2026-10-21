@@ -99,13 +99,17 @@ def parse_reply(text: str, extractor: str = "") -> Extraction:
     return Extraction(header=header, items=items, extractor=extractor).complete()
 
 
+def cache_path(email: Email, config: llm.LLMConfig, cache_dir: str | Path) -> Path:
+    """Where the model's answer for this email is saved."""
+    safe_model = re.sub(r"[^A-Za-z0-9_.-]", "_", config.name)
+    return Path(cache_dir) / f"{email.case_id}.{safe_model}.json"
+
+
 def extract_llm(email: Email, config: llm.LLMConfig, cache_dir: str | Path | None = None,
                 refresh: bool = False) -> Extraction:
     """Ask the model to fill the template. Replies are cached so notebooks re-run without the model."""
-    cache = None
-    if cache_dir is not None:
-        safe_model = re.sub(r"[^A-Za-z0-9_.-]", "_", config.name)
-        cache = Path(cache_dir) / f"{email.case_id}.{safe_model}.json"
+    cache = cache_path(email, config, cache_dir) if cache_dir is not None else None
+    if cache is not None:
         if cache.exists() and not refresh:
             return parse_reply(cache.read_text(encoding="utf-8"), extractor=config.name)
 
