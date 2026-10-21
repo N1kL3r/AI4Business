@@ -63,7 +63,7 @@ def _header(email: Email) -> dict[str, Field]:
         if m.group(1) not in specs:
             specs.append(m.group(1))
     if specs:
-        h["specifications"] = _found(specs, specs[0])
+        h["specifications"] = _found(specs, " ... ".join(specs))
 
     cjk = len(re.findall(r"[一-鿿]", body))
     h["language"] = _found("zh" if cjk > 10 else "en", "(character count)")
@@ -92,7 +92,7 @@ def _items(email: Email) -> list[dict[str, Field]]:
         else:  # table layout: description is the first column after the part number
             rest = first[len(part):].strip()
             desc = [re.split(r"\s{2,}", rest)[0]] + [re.split(r"\s{2,}", l.strip())[0] for l in lines[1:]]
-            item["description"] = _found(" ".join(desc), rest)
+            item["description"] = _found(" ".join(desc), " ... ".join(desc))
 
         if m := re.search(r"\bQty\s+(\d+)", text, re.I):
             item["quantity"] = _found(int(m.group(1)), m.group(0))

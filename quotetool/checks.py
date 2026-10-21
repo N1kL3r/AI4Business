@@ -73,17 +73,54 @@ def evidence_in_text(evidence: str, text: str) -> bool:
     return True
 
 
+DATE_FIELDS = {"received_date", "deadline"}
+
+
+def _has_cjk(text: str) -> bool:
+    return bool(re.search(r"[一-鿿]", text))
+
+
+def value_in_evidence(name: str, value, evidence: str) -> bool | None:
+    """Does the quoted evidence actually contain the value? None = cannot tell (e.g. translated text)."""
+    if isinstance(value, list):
+        results = [value_in_evidence(name, v, evidence) for v in value]
+        return None if None in results else all(results)
+    tokens = set(_norm_tokens(evidence))
+    if name in DATE_FIELDS:  # "2026-05-15" is written as "Friday 15 May": look for the day number
+        m = re.fullmatch(r"\d{4}-\d{2}-(\d{2})", str(value))
+        return m is None or str(int(m.group(1))) in tokens or m.group(1) in tokens
+    if isinstance(value, (int, float)):
+        n = int(value) if float(value).is_integer() else value
+        return str(n) in tokens or f"{float(n)}" in tokens
+    flat = lambda s: re.sub(r"[^0-9a-z一-鿿]", "", str(s).lower())
+    if flat(value) and flat(value) in flat(evidence):
+        return True
+    if _has_cjk(evidence) and not _has_cjk(str(value)):
+        return None  # the model may have translated, e.g. 铜 -> bronze
+    return False
+
+
 def _verify(name: str, f: Field, email: Email) -> None:
     """Downgrade a field's status if the claim does not hold up. Changes the field in place."""
-    if f.status in (Status.FOUND, Status.NEEDS_REVIEW) and f.value in (None, "", []):
-        f.status, f.evidence = Status.MISSING, None
+    if f.status in (Status.FOUND, Status.NEEDS_REVIEW) and (
+            f.value in (None, "", []) or (isinstance(f.value, str) and f.value in {s.value for s in Status})):  # status word put into value
+        f.status, f.value, f.evidence = Status.MISSING, None, None
         return
-    if f.status != Status.FOUND or name in NO_EVIDENCE_NEEDED:
+    if f.status not in (Status.FOUND, Status.NEEDS_REVIEW) or name in NO_EVIDENCE_NEEDED:
         return
     if not f.evidence:
         f.status, f.note = Status.NEEDS_REVIEW, "no evidence given by extractor"
-    elif not evidence_in_text(f.evidence, email.text):
+        return
+    if not evidence_in_text(f.evidence, email.text):
         f.status, f.note = Status.NEEDS_REVIEW, "evidence not found in the email text: possibly invented"
+        return
+    supported = value_in_evidence(name, f.value, f.evidence)
+    if supported is False:
+        # The quoted text is real but does not contain the value: the model filled it in itself.
+        f.status, f.note = Status.MISSING, f"model suggested {f.value!r}, but the quoted text does not say so"
+        f.value, f.evidence = None, None
+    elif supported is None:
+        f.status, f.note = Status.NEEDS_REVIEW, f.note or "value is a translation or reading of the text: confirm"
 
 
 def _to_number(value):

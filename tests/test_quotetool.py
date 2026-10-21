@@ -95,3 +95,24 @@ def test_extract_llm_round_trip_with_simulated_ollama(monkeypatch, tmp_path):
 
     monkeypatch.setattr(llm.requests, "post", lambda *a, **k: (_ for _ in ()).throw(AssertionError("not cached")))
     assert extract.extract_llm(EMAIL, config, cache_dir=tmp_path).items[0]["part_number"].value == "XY-7A"
+
+
+def test_value_not_in_quoted_evidence_becomes_missing():
+    """Real failure from a qwen2.5:7b run: quantity 1 and unit EA 'found', quoting a line with no quantity."""
+    line = "XY-7A  RING  SET  10  C95510"
+    ex = parse_reply(reply(quantity=field(1, evidence=line), unit=field("EA", evidence=line),
+                           material=field("needs_review", "needs_review", evidence="RING")))
+    result = check(ex, EMAIL)
+    item = result.extraction.items[0]
+    assert item["quantity"].status == Status.MISSING and "suggested 1" in item["quantity"].note
+    assert item["unit"].status == Status.MISSING
+    assert item["material"].status == Status.MISSING  # status word written into value
+    assert not result.ready_to_quote
+
+
+def test_dates_and_translations_are_not_rejected():
+    from quotetool.checks import value_in_evidence
+    assert value_in_evidence("deadline", "2026-05-15", "by EOB Friday 15 May")
+    assert value_in_evidence("material", "bronze", "附件是泵用的铜密封件") is None  # cannot tell: review
+    assert value_in_evidence("quantity", 144, "SET  144")
+    assert not value_in_evidence("quantity", 1, "4P100346      RNG/LANTERN/4.00")

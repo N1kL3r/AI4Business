@@ -40,18 +40,20 @@ HEADER_FIELDS: dict[str, str] = {
     "urgency": "One of: low, normal, high. 'urgent', 'asap', short deadlines mean high.",
     "currency": "Currency the customer wants the price in (e.g. USD, EUR, RMB).",
     "incoterm": "Trade term requested (e.g. FOB, CIF, EXW, DAP).",
-    "specifications": "List of specification or standard references (e.g. company spec numbers, AMS/ASTM/DIN numbers).",
+    "specifications": "List of specification or standard documents the parts must meet (company spec numbers, "
+                      "AMS/ASTM/DIN numbers). Machine or series codes are NOT specifications.",
     "language": "Language of the email body, as a code: en, zh, de, ...",
 }
 
 LINE_FIELDS: dict[str, str] = {
     "part_number": "The customer's part number / item code for this line.",
-    "description": "Part description as written (keep abbreviations).",
+    "description": "Part description as written (keep abbreviations). In tables the description can wrap onto "
+                   "the next lines: join those parts.",
     "quantity": "Number ordered, as a number, in the unit the customer uses.",
     "unit": "Unit of the quantity, e.g. EA, PC, SET.",
     "pieces_per_unit": "If the text says one unit equals several pieces (e.g. one set = 2 pieces), that number.",
-    "material": "Requested material or alloy grade for this line (e.g. C95510). Generic words like 'bronze' are "
-                "allowed but should be needs_review.",
+    "material": "Material or alloy grade the customer asks for on this line, exactly as written. Generic words "
+                "like 'bronze' count, but use status needs_review. If no material is written, it is missing.",
     "material_alternatives": "List of other materials the customer says are acceptable substitutes.",
     "drawing_ref": "Drawing number or attachment file name that belongs to this line.",
     "machine_model": "Machine model, pump series or equipment code the part belongs to.",

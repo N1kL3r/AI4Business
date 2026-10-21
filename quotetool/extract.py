@@ -19,6 +19,10 @@ Rules:
   - status "missing": the email does not state it. value and evidence are null.
   - status "needs_review": the email says something relevant but it is ambiguous, generic or conflicting.
     Give your best reading as value, the text as evidence, and explain in note.
+- Never fill in a default. If no quantity is written, quantity is missing: do NOT assume 1.
+  If no unit is written, unit is missing: do NOT assume EA. If no material is written, material is missing.
+- The value must be in the evidence you quote (dates and translations excepted).
+- "value" holds the data only. Never write a status word such as "missing" or "needs_review" into value.
 - Make one line item per part the customer asks for.
 - Quantities: if the text says one unit equals several pieces (e.g. "one set = 2 pc"), put that number in
   pieces_per_unit. Keep quantity in the customer's own unit.
