@@ -43,5 +43,6 @@ def evidence_table(ex: Extraction) -> pd.DataFrame:
     for item in ex.items:
         part = item["part_number"].value or "?"
         rows += [{"where": part, "field": k, "value": _show(f.value), "status": ICONS[f.status],
-                  "evidence": f.evidence or "", "note": f.note or ""} for k, f in item.items()]
+                  "evidence": f.evidence or "", "note": f.note or ""} for k, f in item.items()
+                  if k != "past_quotes"]  # listed in full in its own table
     return pd.DataFrame(rows)

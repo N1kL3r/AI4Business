@@ -5,6 +5,7 @@ Start it with:  streamlit run app.py
 import hashlib
 from pathlib import Path
 
+import pandas as pd
 import streamlit as st
 
 import quotetool as qt
@@ -12,7 +13,7 @@ from quotetool import llm, report
 from quotetool.emails import parse_email_text, parse_eml
 from quotetool.extract import cache_path
 from quotetool.history import load_history
-from quotetool.matching import match_items
+from quotetool.matching import match_issues, match_items
 
 ROOT = Path(__file__).parent
 INBOX, CACHE, RAW = ROOT / "data/inbox", ROOT / "data/lake/processed", ROOT / "data/lake/raw"
@@ -112,6 +113,7 @@ if st.button("Read email", type="primary") or st.session_state.get("last_run") =
                 st.stop()
         result = qt.check(extraction, email)
         match_items(result.extraction.items, history)
+        result.issues += match_issues(result.extraction.items)
         RAW.mkdir(parents=True, exist_ok=True)
         (RAW / f"{email.case_id}.txt").write_text(email.text, encoding="utf-8")  # raw layer of the data lake
         st.session_state.update(last_run=run_key, result=result, saved=saved)
@@ -148,6 +150,26 @@ match_fields = ("part_number", "description", "quantity", "unit", "pieces_per_un
                 "drawing_ref", "machine_model", "match_tier", "matched_part_number", "reference_price")
 st.dataframe(report.items_table(ex, fields=match_fields).rename(columns=label), hide_index=True, width="stretch")
 st.caption("✅ found in the email · ❌ missing · ⚠️ check · 🔵 our assumption")
+
+# ---------- Past quotes ----------
+st.subheader("Past quotes for these parts")
+tiers = [item["match_tier"].value for item in ex.items]
+st.write(f"Compared with **{len(history)} past quotes** in `{history_file.relative_to(ROOT)}`: "
+         f"**{tiers.count('exact')}** part(s) quoted before with the same part number, "
+         f"**{tiers.count('similar')}** only with a similar description (check), "
+         f"**{tiers.count('none')}** not found.")
+past = [{"part_in_inquiry": item["part_number"].value, "match": item["match_tier"].value,
+         "past_part_number": q["part_number"], "past_description": q["description"], "price": q["price"],
+         "currency": q["currency"], "quantity": q["quantity"], "quoted_on": q["quoted_date"],
+         "customer": q["customer"], "quote_id": q["quote_id"], "similarity": q["similarity"],
+         "row_in_file": q["source_row"]}
+        for item in ex.items for q in item["past_quotes"].value]
+if past:
+    st.dataframe(pd.DataFrame(past).rename(columns=label), hide_index=True, width="stretch")
+    st.caption("Newest first. 'Row in file' is the row in the past-quotes file, so the original quote can be looked up. "
+               "A 'similar' match is a different part: its price is only a pointer.")
+else:
+    st.write("No past quotes found for any part.")
 
 # ---------- Issues ----------
 st.subheader("What needs attention")

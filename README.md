@@ -50,8 +50,10 @@ a blank line, then the body) and `data/test_cases/*.json` (same file name, the e
 ## Past quotes (reference prices)
 
 The app compares every part with an archive of past quotes. Put the real export at `data/history/past_quotes.csv`
-(or `.xlsx`) with the columns `part_number`, `description`, `price` (other columns are ignored). Without that file the app
-falls back to the made-up `examples/past_quotes_example.csv` and says so in the sidebar. A "similar" match is a *different*
+(or `.xlsx`) with the columns `part_number`, `description`, `price`. Optional but recommended, so a match can be traced
+to the original quote: `currency`, `quoted_date`, `customer`, `quote_id`, `quantity`. Without that file the app
+falls back to the made-up `examples/past_quotes_example.csv` and says so in the sidebar. The app lists every past quote behind a match (newest first, with the row in the file) in the
+"Past quotes for these parts" table, and adds a line per part to "What needs attention". A "similar" match is a *different*
 part, so it is marked ⚠️ and a person must check its price.
 
 ## Running the app for others
