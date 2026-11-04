@@ -11,11 +11,20 @@ import quotetool as qt
 from quotetool import llm, report
 from quotetool.emails import parse_email_text, parse_eml
 from quotetool.extract import cache_path
+from quotetool.matching import match_items
 
 ROOT = Path(__file__).parent
 INBOX, CACHE, RAW = ROOT / "data/inbox", ROOT / "data/lake/processed", ROOT / "data/lake/raw"
 AI, RULES = "AI model (Ollama)", "Rules only (no AI)"
 SEVERITY_ICONS = {"blocking": "🛑 blocking", "check": "⚠️ check", "assumption": "🔵 assumption", "info": "ℹ️ info"}
+
+# Demo price list, temporary until the company's real history arrives.
+# When it does, only this list is replaced; nothing else in the file changes.
+DEMO_HISTORY = [
+    {"part_number": "G42D2365", "description": "OUTER BUSH ECCENTRIC", "price": 420},
+    {"part_number": "G42D1980", "description": "OUTER BUSH ECCENTRIC (previous revision)", "price": 395},
+    {"part_number": "X99Z0001", "description": "VALVE HOUSING", "price": 150},
+]
 
 st.set_page_config(page_title="Quote Assistant", page_icon="📨", layout="wide")
 
@@ -87,9 +96,11 @@ if st.button("Read email", type="primary") or st.session_state.get("last_run") =
             except Exception as e:  # model not running, or an answer that cannot be read
                 st.error(f"The model could not read this email: {e}\n\nTry again, or switch to 'Rules only'.")
                 st.stop()
+        result = qt.check(extraction, email)
+        match_items(result.extraction.items, DEMO_HISTORY)
         RAW.mkdir(parents=True, exist_ok=True)
         (RAW / f"{email.case_id}.txt").write_text(email.text, encoding="utf-8")  # raw layer of the data lake
-        st.session_state.update(last_run=run_key, result=qt.check(extraction, email), saved=saved)
+        st.session_state.update(last_run=run_key, result=result, saved=saved)
 else:
     st.stop()
 
@@ -119,7 +130,9 @@ for n, (name, f) in enumerate(ex.header.items()):
     columns[n % 3].markdown(f"{icon} **{label(name)}:** {report._show(f.value) or '—'}")
 
 st.subheader("Parts")
-st.dataframe(report.items_table(ex).rename(columns=label), hide_index=True, width="stretch")
+match_fields = ("part_number", "description", "quantity", "unit", "pieces_per_unit", "material",
+                "drawing_ref", "machine_model", "match_tier", "matched_part_number", "reference_price")
+st.dataframe(report.items_table(ex, fields=match_fields).rename(columns=label), hide_index=True, width="stretch")
 st.caption("✅ found in the email · ❌ missing · ⚠️ check · 🔵 our assumption")
 
 # ---------- Issues ----------

@@ -4,3 +4,4 @@ requests>=2.28
 jupyter
 streamlit>=1.40
 pytest
+scikit-learn
