@@ -43,3 +43,18 @@ def test_empty_or_unusable_history():
         assert it["match_tier"].value == "none"
     [it] = match_items([item("A1", "")], [{"part_number": "A1", "description": "", "price": 5}])
     assert it["match_tier"].value == "exact"
+
+
+def test_load_history(tmp_path):
+    from quotetool.history import load_history
+    f = tmp_path / "h.csv"
+    f.write_text("Part_Number,Description,Price,extra\n A1 ,RING,10,x\n,NOPART,5,x\nB2,SLEEVE,abc,x\nC3,,7.5,x\n")
+    assert load_history(f) == [{"part_number": "A1", "description": "RING", "price": 10.0},
+                               {"part_number": "C3", "description": "", "price": 7.5}]
+    f.write_text("part_number,description\nA1,RING\n")
+    try:
+        load_history(f)
+    except ValueError as e:
+        assert "price" in str(e)
+    else:
+        raise AssertionError("missing column not reported")

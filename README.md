@@ -14,6 +14,8 @@ bronze parts manufacturer. The tool reads the email, fills in a quote template, 
 | `quotetool/checks.py` | Plain-code checks: is the evidence really in the email, YC default terms, what blocks the quote |
 | `quotetool/evaluate.py` | Scores an extraction against a hand-made answer key |
 | `quotetool/llm.py` | One function to call the model: local Ollama, or any OpenAI-compatible API |
+| `quotetool/matching.py`, `history.py` | Compare each part with past quotes (exact part number, or similar description marked for review) and show a reference price |
+| `examples/past_quotes_example.csv` | Made-up past quotes so the matching can be tried. Not real prices |
 | `app.py` | The web app for sales: drop in an email, get the quote card, what is missing, and a draft reply |
 | `notebooks/01_extraction.ipynb` | Evaluation: emails → extraction → checkpoint → score, AI models vs. rules |
 | `data/` | Sample emails, answer keys and the data lake. **Not in git** (company data, see below) |
@@ -44,6 +46,13 @@ Tests: `python -m pytest tests`.
 The sample emails and answer keys come from the testbed firm under the project's data agreement and are
 kept out of this public repository. Place them in `data/inbox/*.txt` (one email per file: header lines,
 a blank line, then the body) and `data/test_cases/*.json` (same file name, the expected values; `null` = not in the email).
+
+## Past quotes (reference prices)
+
+The app compares every part with an archive of past quotes. Put the real export at `data/history/past_quotes.csv`
+(or `.xlsx`) with the columns `part_number`, `description`, `price` (other columns are ignored). Without that file the app
+falls back to the made-up `examples/past_quotes_example.csv` and says so in the sidebar. A "similar" match is a *different*
+part, so it is marked ⚠️ and a person must check its price.
 
 ## Running the app for others
 

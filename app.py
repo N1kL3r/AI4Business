@@ -11,6 +11,7 @@ import quotetool as qt
 from quotetool import llm, report
 from quotetool.emails import parse_email_text, parse_eml
 from quotetool.extract import cache_path
+from quotetool.history import load_history
 from quotetool.matching import match_items
 
 ROOT = Path(__file__).parent
@@ -18,15 +19,16 @@ INBOX, CACHE, RAW = ROOT / "data/inbox", ROOT / "data/lake/processed", ROOT / "d
 AI, RULES = "AI model (Ollama)", "Rules only (no AI)"
 SEVERITY_ICONS = {"blocking": "🛑 blocking", "check": "⚠️ check", "assumption": "🔵 assumption", "info": "ℹ️ info"}
 
-# Demo price list, temporary until the company's real history arrives.
-# When it does, only this list is replaced; nothing else in the file changes.
-DEMO_HISTORY = [
-    {"part_number": "G42D2365", "description": "OUTER BUSH ECCENTRIC", "price": 420},
-    {"part_number": "G42D1980", "description": "OUTER BUSH ECCENTRIC (previous revision)", "price": 395},
-    {"part_number": "X99Z0001", "description": "VALVE HOUSING", "price": 150},
-]
+# Past quotes the parts are compared against. Put the company's real export at data/history/past_quotes.csv
+# (columns: part_number, description, price); until then the made-up example file is used.
+HISTORY_FILE, EXAMPLE_HISTORY_FILE = ROOT / "data/history/past_quotes.csv", ROOT / "examples/past_quotes_example.csv"
 
 st.set_page_config(page_title="Quote Assistant", page_icon="📨", layout="wide")
+
+
+@st.cache_data
+def read_history(path: str, modified: float) -> list[dict]:  # `modified` makes the cache refresh when the file changes
+    return load_history(path)
 
 
 def short_hash(data: bytes) -> str:
@@ -50,6 +52,18 @@ with st.sidebar:
         else:
             st.warning(f"{message}\n\nEmails read before still open from their saved answers. "
                        "For new emails, start the model or switch to 'Rules only'.")
+    history_file = HISTORY_FILE if HISTORY_FILE.exists() else EXAMPLE_HISTORY_FILE
+    try:
+        history = read_history(str(history_file), history_file.stat().st_mtime)
+    except Exception as e:
+        history = []
+        st.warning(f"Could not read the past quotes in {history_file.name}: {e}\n\nNo reference prices will be shown.")
+    else:
+        if history_file == HISTORY_FILE:
+            st.success(f"{len(history)} past quotes loaded")
+        else:
+            st.warning(f"{len(history)} EXAMPLE past quotes (made up). Reference prices are not real. "
+                       "Put the real export at data/history/past_quotes.csv.")
     st.caption("Everything runs on this computer: the email is not sent anywhere. "
                "Answers are saved in data/lake/, so an email read once opens instantly next time.")
 
@@ -97,7 +111,7 @@ if st.button("Read email", type="primary") or st.session_state.get("last_run") =
                 st.error(f"The model could not read this email: {e}\n\nTry again, or switch to 'Rules only'.")
                 st.stop()
         result = qt.check(extraction, email)
-        match_items(result.extraction.items, DEMO_HISTORY)
+        match_items(result.extraction.items, history)
         RAW.mkdir(parents=True, exist_ok=True)
         (RAW / f"{email.case_id}.txt").write_text(email.text, encoding="utf-8")  # raw layer of the data lake
         st.session_state.update(last_run=run_key, result=result, saved=saved)
