@@ -1,0 +1,37 @@
+{
+  "header": {
+    "customer": {"value": "Customer T", "status": "found", "evidence": "From: M.T. (Purchasing) <[Customer T]>", "note": null},
+    "contact": {"value": "M.T.", "status": "found", "evidence": "From: M.T. (Purchasing) <[Customer T]>", "note": null},
+    "received_date": {"value": "2026-05-13", "status": "found", "evidence": "Date: 13 May 2026", "note": null},
+    "deadline": {"value": "2026-05-15", "status": "found", "evidence": "We have a customer enquiry for the above, therefore your response by EOB Friday 15 May would be appreciated.", "note": null},
+    "urgency": {"value": "normal", "status": "found", "evidence": "We have a customer enquiry for the above, therefore your response by EOB Friday 15 May would be appreciated.", "note": null},
+    "currency": {"value": "USD", "status": "found", "evidence": "Can you please assist with USD FOB price and lead time for the below?", "note": null},
+    "incoterm": {"value": "FOB", "status": "found", "evidence": "Can you please assist with USD FOB price and lead time for the below?", "note": null},
+    "specifications": {"value": "JEP0089, D2365, D2371", "status": "found", "evidence": "Referenced drawings and specification attached.", "note": null},
+    "language": {"value": "en", "status": "found", "evidence": "Hi, Can you please assist with USD FOB price and lead time for the below? Referenced drawings and specification attached.", "note": null}
+  },
+  "items": [
+    {
+      "part_number": {"value": "G42D2365", "status": "found", "evidence": "Qty 1, Part G42D2365, OUTER BUSH ECCENTRIC, supplied finish machined to standard sizes to our drawing D2365 and specification JEP0089.", "note": null},
+      "description": {"value": "OUTER BUSH ECCENTRIC, supplied finish machined to standard sizes to our drawing D2365 and specification JEP0089", "status": "found", "evidence": "Qty 1, Part G42D2365, OUTER BUSH ECCENTRIC, supplied finish machined to standard sizes to our drawing D2365 and specification JEP0089.", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "Qty 1, Part G42D2365, OUTER BUSH ECCENTRIC, supplied finish machined to standard sizes to our drawing D2365 and specification JEP0089.", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "Qty 1, Part G42D2365, OUTER BUSH ECCENTRIC, supplied finish machined to standard sizes to our drawing D2365 and specification JEP0089.", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "D2365", "status": "found", "evidence": "Qty 1, Part G42D2365, OUTER BUSH ECCENTRIC, supplied finish machined to standard sizes to our drawing D2365 and specification JEP0089.", "note": null},
+      "machine_model": {"value": null, "status": "missing", "evidence": null, "note": null}
+    },
+    {
+      "part_number": {"value": "G42D2371", "status": "found", "evidence": "Qty 1, Part G42D2371, INNER BUSH ECCENTRIC, same terms, drawing D2371.", "note": null},
+      "description": {"value": "INNER BUSH ECCENTRIC, same terms, drawing D2371", "status": "found", "evidence": "Qty 1, Part G42D2371, INNER BUSH ECCENTRIC, same terms, drawing D2371.", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "Qty 1, Part G42D2371, INNER BUSH ECCENTRIC, same terms, drawing D2371.", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "Qty 1, Part G42D2371, INNER BUSH ECCENTRIC, same terms, drawing D2371.", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "D2371", "status": "found", "evidence": "Qty 1, Part G42D2371, INNER BUSH ECCENTRIC, same terms, drawing D2371.", "note": null},
+      "machine_model": {"value": null, "status": "missing", "evidence": null, "note": null}
+    }
+  ]
+}

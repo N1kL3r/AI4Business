@@ -1,0 +1,508 @@
+{
+  "header": {
+    "customer": {
+      "value": "[Customer S]",
+      "status": "found",
+      "evidence": "[Customer S]",
+      "note": null
+    },
+    "contact": {
+      "value": "S.H.",
+      "status": "found",
+      "evidence": "S.H., Sourcing Engineer",
+      "note": null
+    },
+    "received_date": {
+      "value": "2023-09-15",
+      "status": "found",
+      "evidence": "15 September 2023",
+      "note": null
+    },
+    "deadline": {
+      "value": null,
+      "status": "missing",
+      "evidence": null,
+      "note": null
+    },
+    "urgency": {
+      "value": "high",
+      "status": "needs_review",
+      "evidence": "请尽快提供报价和交货周期",
+      "note": "The phrase '请尽快' (please provide ASAP) indicates high urgency, though no specific date is given."
+    },
+    "currency": {
+      "value": null,
+      "status": "missing",
+      "evidence": null,
+      "note": null
+    },
+    "incoterm": {
+      "value": null,
+      "status": "missing",
+      "evidence": null,
+      "note": null
+    },
+    "specifications": {
+      "value": null,
+      "status": "missing",
+      "evidence": null,
+      "note": null
+    },
+    "language": {
+      "value": "zh",
+      "status": "found",
+      "evidence": "附件是泵用的铜密封件，请尽快提供报价和交货周期，谢谢！",
+      "note": null
+    }
+  },
+  "items": [
+    {
+      "part_number": {
+        "value": "4P100346",
+        "status": "found",
+        "evidence": "4P100346",
+        "note": null
+      },
+      "description": {
+        "value": "RNG/LANTERN/4.00",
+        "status": "found",
+        "evidence": "RNG/LANTERN/4.00",
+        "note": null
+      },
+      "quantity": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "needs_review",
+        "evidence": "泵用的铜密封件",
+        "note": "The email mentions 'copper sealing parts' (铜密封件) generally. Specific alloy grade is not stated."
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "Q230986",
+        "status": "found",
+        "evidence": "Q230986",
+        "note": null
+      },
+      "machine_model": {
+        "value": "TWS900-QWS",
+        "status": "found",
+        "evidence": "TWS900-QWS",
+        "note": null
+      }
+    },
+    {
+      "part_number": {
+        "value": "4P100651",
+        "status": "found",
+        "evidence": "4P100651",
+        "note": null
+      },
+      "description": {
+        "value": "RNG/LANTERN/4.50",
+        "status": "found",
+        "evidence": "RNG/LANTERN/4.50",
+        "note": null
+      },
+      "quantity": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "needs_review",
+        "evidence": "泵用的铜密封件",
+        "note": "The email mentions 'copper sealing parts' (铜密封件) generally. Specific alloy grade is not stated."
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "Q230986",
+        "status": "found",
+        "evidence": "Q230986",
+        "note": null
+      },
+      "machine_model": {
+        "value": "TWS900-QWS",
+        "status": "found",
+        "evidence": "TWS900-QWS",
+        "note": null
+      }
+    },
+    {
+      "part_number": {
+        "value": "4P100238",
+        "status": "found",
+        "evidence": "4P100238",
+        "note": null
+      },
+      "description": {
+        "value": "RNG/LANTERN/5.00",
+        "status": "found",
+        "evidence": "RNG/LANTERN/5.00",
+        "note": null
+      },
+      "quantity": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "needs_review",
+        "evidence": "泵用的铜密封件",
+        "note": "The email mentions 'copper sealing parts' (铜密封件) generally. Specific alloy grade is not stated."
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "Q230986",
+        "status": "found",
+        "evidence": "Q230986",
+        "note": null
+      },
+      "machine_model": {
+        "value": "TWS900-QWS",
+        "status": "found",
+        "evidence": "TWS900-QWS",
+        "note": null
+      }
+    },
+    {
+      "part_number": {
+        "value": "4P100145",
+        "status": "found",
+        "evidence": "4P100145",
+        "note": null
+      },
+      "description": {
+        "value": "RNG/LANTERN/5.50",
+        "status": "found",
+        "evidence": "RNG/LANTERN/5.50",
+        "note": null
+      },
+      "quantity": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "needs_review",
+        "evidence": "泵用的铜密封件",
+        "note": "The email mentions 'copper sealing parts' (铜密封件) generally. Specific alloy grade is not stated."
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "Q230986",
+        "status": "found",
+        "evidence": "Q230986",
+        "note": null
+      },
+      "machine_model": {
+        "value": "TWS900-QWS",
+        "status": "found",
+        "evidence": "TWS900-QWS",
+        "note": null
+      }
+    },
+    {
+      "part_number": {
+        "value": "4P100345",
+        "status": "found",
+        "evidence": "4P100345",
+        "note": null
+      },
+      "description": {
+        "value": "ADPTR/PKG/FMLE/4",
+        "status": "found",
+        "evidence": "ADPTR/PKG/FMLE/4",
+        "note": null
+      },
+      "quantity": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "needs_review",
+        "evidence": "泵用的铜密封件",
+        "note": "The email mentions 'copper sealing parts' (铜密封件) generally. Specific alloy grade is not stated."
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "Q230987",
+        "status": "found",
+        "evidence": "Q230987",
+        "note": null
+      },
+      "machine_model": {
+        "value": "TWS900-QWS",
+        "status": "found",
+        "evidence": "TWS900-QWS",
+        "note": null
+      }
+    },
+    {
+      "part_number": {
+        "value": "4P100650",
+        "status": "found",
+        "evidence": "4P100650",
+        "note": null
+      },
+      "description": {
+        "value": "ADPTR/PKG/FMLE/4.5",
+        "status": "found",
+        "evidence": "ADPTR/PKG/FMLE/4.5",
+        "note": null
+      },
+      "quantity": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "needs_review",
+        "evidence": "泵用的铜密封件",
+        "note": "The email mentions 'copper sealing parts' (铜密封件) generally. Specific alloy grade is not stated."
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "Q230987",
+        "status": "found",
+        "evidence": "Q230987",
+        "note": null
+      },
+      "machine_model": {
+        "value": "TWS900-QWS",
+        "status": "found",
+        "evidence": "TWS900-QWS",
+        "note": null
+      }
+    },
+    {
+      "part_number": {
+        "value": "4P100239",
+        "status": "found",
+        "evidence": "4P100239",
+        "note": null
+      },
+      "description": {
+        "value": "ADPTR/PKG/FMLE/5",
+        "status": "found",
+        "evidence": "ADPTR/PKG/FMLE/5",
+        "note": null
+      },
+      "quantity": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "needs_review",
+        "evidence": "泵用的铜密封件",
+        "note": "The email mentions 'copper sealing parts' (铜密封件) generally. Specific alloy grade is not stated."
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "Q230987",
+        "status": "found",
+        "evidence": "Q230987",
+        "note": null
+      },
+      "machine_model": {
+        "value": "TWS900-QWS",
+        "status": "found",
+        "evidence": "TWS900-QWS",
+        "note": null
+      }
+    },
+    {
+      "part_number": {
+        "value": "4P107777",
+        "status": "found",
+        "evidence": "4P107777",
+        "note": null
+      },
+      "description": {
+        "value": "ADPTR/PKG/5.50 T900-QWS/HI PERF/",
+        "status": "found",
+        "evidence": "ADPTR/PKG/5.50 T900-QWS/HI PERF/",
+        "note": null
+      },
+      "quantity": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "needs_review",
+        "evidence": "泵用的铜密封件",
+        "note": "The email mentions 'copper sealing parts' (铜密封件) generally. Specific alloy grade is not stated."
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "Q230987",
+        "status": "found",
+        "evidence": "Q230987",
+        "note": null
+      },
+      "machine_model": {
+        "value": "TWS900-QWS",
+        "status": "found",
+        "evidence": "TWS900-QWS",
+        "note": null
+      }
+    }
+  ]
+}

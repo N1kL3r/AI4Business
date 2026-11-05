@@ -48,9 +48,10 @@ Tests: `python -m pytest tests`.
 
 ## Data
 
-The sample emails and answer keys come from the testbed firm under the project's data agreement and are
-kept out of this public repository. Place them in `data/inbox/*.txt` (one email per file: header lines,
-a blank line, then the body) and `data/test_cases/*.json` (same file name, the expected values; `null` = not in the email).
+The sample emails and answer keys are anonymized (customer and company names are masked) and are included in the repo:
+`data/inbox/*.txt` (one email per file: header lines, a blank line, then the body), `data/test_cases/*.json` (same file name,
+the expected values; `null` = not in the email) and `data/lake/processed/` (saved model answers, so the app and notebook open
+them without Ollama). Do not add real, unmasked customer data to the repo.
 
 ## Past quotes (reference prices)
 

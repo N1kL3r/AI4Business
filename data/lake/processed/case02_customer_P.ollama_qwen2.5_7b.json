@@ -1,0 +1,59 @@
+{
+  "header": {
+    "customer": {"value": "Customer P", "status": "found", "evidence": "From: S.S. <sales@[Customer P]>", "note": null},
+    "contact": {"value": "S.S.", "status": "found", "evidence": "From: S.S. <sales@[Customer P]>", "note": null},
+    "received_date": {"value": "2025-06-16", "status": "found", "evidence": "Date: 16 June 2025, 18:08", "note": null},
+    "deadline": {"value": null, "status": "missing", "evidence": null, "note": null},
+    "urgency": {"value": "high", "status": "needs_review", "evidence": "Please go through below inquiry and quote your best price and delivery lead time urgently.", "note": "The term 'urgently' suggests high urgency, but no specific deadline is provided."},
+    "currency": {"value": null, "status": "missing", "evidence": null, "note": null},
+    "incoterm": {"value": null, "status": "missing", "evidence": null, "note": null},
+    "specifications": {"value": ["15C.pdf", "16C.pdf", "17C.pdf", "18C.pdf"], "status": "found", "evidence": "Attachments: 15C.pdf, 16C.pdf, 17C.pdf, 18C.pdf", "note": null},
+    "language": {"value": "en", "status": "found", "evidence": null, "note": null}
+  },
+  "items": [
+    {
+      "part_number": {"value": "ST-NRSC-7000-15C", "status": "found", "evidence": "ST-NRSC-7000-15C  7.00\" SCRAPER & BRUSH TOOL INNER", "note": null},
+      "description": {"value": "7.00\" SCRAPER & BRUSH TOOL INNER TORQUE SLEEVE LOWER RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)", "status": "found", "evidence": "7.00\" SCRAPER & BRUSH TOOL INNER TORQUE SLEEVE LOWER RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)", "note": null},
+      "quantity": {"value": 144, "status": "found", "evidence": "SET  144", "note": null},
+      "unit": {"value": "SET", "status": "found", "evidence": "SET", "note": null},
+      "pieces_per_unit": {"value": 2, "status": "found", "evidence": "ONE EACH IS EQUAL TO ONE SET OF 2 PC", "note": null},
+      "material": {"value": "C95510 NICKEL", "status": "found", "evidence": "C95510 NICKEL", "note": null},
+      "material_alternatives": {"value": "C63000", "status": "found", "evidence": "C63000 material.", "note": null},
+      "drawing_ref": {"value": "15C.pdf", "status": "found", "evidence": "Attachments: 15C.pdf, 16C.pdf, 17C.pdf, 18C.pdf", "note": null},
+      "machine_model": {"value": null, "status": "missing", "evidence": null, "note": null}
+    },
+    {
+      "part_number": {"value": "ST-NRSC-7000-16C", "status": "found", "evidence": "ST-NRSC-7000-16C", "note": null},
+      "description": {"value": "7.00\" SCRAPER & BRUSH TOOL INNER TORQUE SLEEVE UPPER RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)", "status": "found", "evidence": "7.00\" SCRAPER & BRUSH TOOL INNER TORQUE SLEEVE UPPER RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)", "note": null},
+      "quantity": {"value": 144, "status": "found", "evidence": "SET  144", "note": null},
+      "unit": {"value": "SET", "status": "found", "evidence": "SET", "note": null},
+      "pieces_per_unit": {"value": 2, "status": "found", "evidence": "ONE EACH IS EQUAL TO ONE SET OF 2 PC", "note": null},
+      "material": {"value": "C95510 NICKEL", "status": "found", "evidence": "C95510 NICKEL", "note": null},
+      "material_alternatives": {"value": "C63000", "status": "found", "evidence": "C63000 material.", "note": null},
+      "drawing_ref": {"value": "16C.pdf", "status": "found", "evidence": "Attachments: 15C.pdf, 16C.pdf, 17C.pdf, 18C.pdf", "note": null},
+      "machine_model": {"value": null, "status": "missing", "evidence": null, "note": null}
+    },
+    {
+      "part_number": {"value": "ST-NRSC-7000-17C", "status": "found", "evidence": "ST-NRSC-7000-17C", "note": null},
+      "description": {"value": "7.00\" SCRAPER & BRUSH TOOL LOWER FRICTION RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)", "status": "found", "evidence": "7.00\" SCRAPER & BRUSH TOOL LOWER FRICTION RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)", "note": null},
+      "quantity": {"value": 144, "status": "found", "evidence": "SET  144", "note": null},
+      "unit": {"value": "SET", "status": "found", "evidence": "SET", "note": null},
+      "pieces_per_unit": {"value": 2, "status": "found", "evidence": "ONE EACH IS EQUAL TO ONE SET OF 2 PC", "note": null},
+      "material": {"value": "C95510 NICKEL", "status": "found", "evidence": "C95510 NICKEL", "note": null},
+      "material_alternatives": {"value": "C63000", "status": "found", "evidence": "C63000 material.", "note": null},
+      "drawing_ref": {"value": "17C.pdf", "status": "found", "evidence": "Attachments: 15C.pdf, 16C.pdf, 17C.pdf, 18C.pdf", "note": null},
+      "machine_model": {"value": null, "status": "missing", "evidence": null, "note": null}
+    },
+    {
+      "part_number": {"value": "ST-NRSC-7000-18C", "status": "found", "evidence": "ST-NRSC-7000-18C", "note": null},
+      "description": {"value": "7.00\" SCRAPER & BRUSH TOOL UPPER FRICTION RING", "status": "found", "evidence": "7.00\" SCRAPER & BRUSH TOOL UPPER FRICTION RING", "note": null},
+      "quantity": {"value": 70, "status": "found", "evidence": "EA  70", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "EA", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "C95510 NICKEL", "status": "found", "evidence": "C95510 NICKEL", "note": null},
+      "material_alternatives": {"value": "C63000", "status": "found", "evidence": "C63000 material.", "note": null},
+      "drawing_ref": {"value": "18C.pdf", "status": "found", "evidence": "Attachments: 15C.pdf, 16C.pdf, 17C.pdf, 18C.pdf", "note": null},
+      "machine_model": {"value": null, "status": "missing", "evidence": null, "note": null}
+    }
+  ]
+}

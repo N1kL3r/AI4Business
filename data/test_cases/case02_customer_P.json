@@ -1,0 +1,70 @@
+{
+  "_notes": "SET = 2 pieces for the first three lines. No deadline, currency or incoterm.",
+  "header": {
+    "customer": "Customer P",
+    "contact": "S.S.",
+    "received_date": "2025-06-16",
+    "deadline": null,
+    "urgency": "high",
+    "currency": null,
+    "incoterm": null,
+    "specifications": [
+      "AMS 4880"
+    ],
+    "language": "en"
+  },
+  "items": [
+    {
+      "part_number": "ST-NRSC-7000-15C",
+      "description": "INNER TORQUE SLEEVE LOWER RING",
+      "quantity": 144,
+      "unit": "SET",
+      "pieces_per_unit": 2,
+      "material": "C95510",
+      "material_alternatives": [
+        "C63000"
+      ],
+      "drawing_ref": "15C.pdf",
+      "machine_model": null
+    },
+    {
+      "part_number": "ST-NRSC-7000-16C",
+      "description": "INNER TORQUE SLEEVE UPPER RING",
+      "quantity": 144,
+      "unit": "SET",
+      "pieces_per_unit": 2,
+      "material": "C95510",
+      "material_alternatives": [
+        "C63000"
+      ],
+      "drawing_ref": "16C.pdf",
+      "machine_model": null
+    },
+    {
+      "part_number": "ST-NRSC-7000-17C",
+      "description": "LOWER FRICTION RING",
+      "quantity": 144,
+      "unit": "SET",
+      "pieces_per_unit": 2,
+      "material": "C95510",
+      "material_alternatives": [
+        "C63000"
+      ],
+      "drawing_ref": "17C.pdf",
+      "machine_model": null
+    },
+    {
+      "part_number": "ST-NRSC-7000-18C",
+      "description": "UPPER FRICTION RING",
+      "quantity": 70,
+      "unit": "EA",
+      "pieces_per_unit": null,
+      "material": "C95510",
+      "material_alternatives": [
+        "C63000"
+      ],
+      "drawing_ref": "18C.pdf",
+      "machine_model": null
+    }
+  ]
+}

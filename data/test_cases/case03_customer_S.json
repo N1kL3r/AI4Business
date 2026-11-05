@@ -1,0 +1,104 @@
+{
+  "_notes": "No quantities (probably in the zips). Material only 'bronze' (铜). Series code is the machine model.",
+  "header": {
+    "customer": "Customer S",
+    "contact": "S.H.",
+    "received_date": "2023-09-15",
+    "deadline": null,
+    "urgency": "high",
+    "currency": null,
+    "incoterm": null,
+    "specifications": null,
+    "language": "zh"
+  },
+  "items": [
+    {
+      "part_number": "4P100346",
+      "description": "LANTERN",
+      "quantity": null,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": "bronze|copper",
+      "material_alternatives": null,
+      "drawing_ref": "Q230986",
+      "machine_model": "TWS900-QWS"
+    },
+    {
+      "part_number": "4P100651",
+      "description": "LANTERN",
+      "quantity": null,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": "bronze|copper",
+      "material_alternatives": null,
+      "drawing_ref": "Q230986",
+      "machine_model": "TWS900-QWS"
+    },
+    {
+      "part_number": "4P100238",
+      "description": "LANTERN",
+      "quantity": null,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": "bronze|copper",
+      "material_alternatives": null,
+      "drawing_ref": "Q230986",
+      "machine_model": "TWS900-QWS"
+    },
+    {
+      "part_number": "4P100145",
+      "description": "LANTERN",
+      "quantity": null,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": "bronze|copper",
+      "material_alternatives": null,
+      "drawing_ref": "Q230986",
+      "machine_model": "TWS900-QWS"
+    },
+    {
+      "part_number": "4P100345",
+      "description": "ADPTR",
+      "quantity": null,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": "bronze|copper",
+      "material_alternatives": null,
+      "drawing_ref": "Q230987",
+      "machine_model": "TWS900-QWS"
+    },
+    {
+      "part_number": "4P100650",
+      "description": "ADPTR",
+      "quantity": null,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": "bronze|copper",
+      "material_alternatives": null,
+      "drawing_ref": "Q230987",
+      "machine_model": "TWS900-QWS"
+    },
+    {
+      "part_number": "4P100239",
+      "description": "ADPTR",
+      "quantity": null,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": "bronze|copper",
+      "material_alternatives": null,
+      "drawing_ref": "Q230987",
+      "machine_model": "TWS900-QWS"
+    },
+    {
+      "part_number": "4P107777",
+      "description": "ADPTR",
+      "quantity": null,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": "bronze|copper",
+      "material_alternatives": null,
+      "drawing_ref": "Q230987",
+      "machine_model": "T900-QWS"
+    }
+  ]
+}

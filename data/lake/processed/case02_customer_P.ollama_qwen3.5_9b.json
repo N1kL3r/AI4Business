@@ -1,0 +1,295 @@
+{
+  "header": {
+    "customer": {
+      "value": null,
+      "status": "missing",
+      "evidence": null,
+      "note": "The email is addressed to 'V.' but the sender's company name is masked as '[Customer P]' in the From field. No explicit customer company name is provided."
+    },
+    "contact": {
+      "value": "S.S.",
+      "status": "found",
+      "evidence": "From: S.S.",
+      "note": null
+    },
+    "received_date": {
+      "value": "2025-06-16",
+      "status": "found",
+      "evidence": "Date: 16 June 2025, 18:08",
+      "note": null
+    },
+    "deadline": {
+      "value": null,
+      "status": "missing",
+      "evidence": "quote your best price and delivery lead time urgently",
+      "note": "The word 'urgently' indicates high priority but no specific date is provided."
+    },
+    "urgency": {
+      "value": "high",
+      "status": "needs_review",
+      "evidence": "quote your best price and delivery lead time urgently",
+      "note": "The email explicitly uses the word 'urgently', which maps to 'high' urgency per rules, though no specific deadline date is given."
+    },
+    "currency": {
+      "value": null,
+      "status": "missing",
+      "evidence": null,
+      "note": "No currency symbol or code (USD, EUR, etc.) is mentioned in the email."
+    },
+    "incoterm": {
+      "value": null,
+      "status": "missing",
+      "evidence": null,
+      "note": "No trade term (FOB, CIF, EXW, etc.) is requested."
+    },
+    "specifications": {
+      "value": [
+        "AMS 4880",
+        "AMS 4640"
+      ],
+      "status": "found",
+      "evidence": "C95510 HT (AMS 4880)... meets the properties of C63000 (AMS 4640)",
+      "note": "Extracted standard numbers mentioned in the material description section."
+    },
+    "language": {
+      "value": "en",
+      "status": "found",
+      "evidence": "Dear V., Please go through below inquiry...",
+      "note": null
+    }
+  },
+  "items": [
+    {
+      "part_number": {
+        "value": "ST-NRSC-7000-15C",
+        "status": "found",
+        "evidence": "ST-NRSC-7000-15C",
+        "note": null
+      },
+      "description": {
+        "value": "7.00\" SCRAPER & BRUSH TOOL INNER TORQUE SLEEVE LOWER RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)",
+        "status": "found",
+        "evidence": "7.00\" SCRAPER & BRUSH TOOL INNER TORQUE SLEEVE LOWER RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)",
+        "note": null
+      },
+      "quantity": {
+        "value": 144,
+        "status": "found",
+        "evidence": "QTY 144",
+        "note": null
+      },
+      "unit": {
+        "value": "SET",
+        "status": "found",
+        "evidence": "UOM SET",
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": 2,
+        "status": "found",
+        "evidence": "(ONE EACH IS EQUAL TO ONE SET OF 2 PC)",
+        "note": null
+      },
+      "material": {
+        "value": "C95510 NICKEL ALUMINUM BRONZE",
+        "status": "found",
+        "evidence": "C95510 NICKEL ALUMINUM BRONZE",
+        "note": null
+      },
+      "material_alternatives": {
+        "value": [
+          "C63000"
+        ],
+        "status": "found",
+        "evidence": "along with C63000 material... The alloy can be used as a substitute for C63000",
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "15C.pdf",
+        "status": "found",
+        "evidence": "Attachments: 15C.pdf",
+        "note": null
+      },
+      "machine_model": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": "No specific machine model or series code is mentioned for this part."
+      }
+    },
+    {
+      "part_number": {
+        "value": "ST-NRSC-7000-16C",
+        "status": "found",
+        "evidence": "ST-NRSC-7000-16C",
+        "note": null
+      },
+      "description": {
+        "value": "7.00\" SCRAPER & BRUSH TOOL INNER TORQUE SLEEVE UPPER RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)",
+        "status": "found",
+        "evidence": "7.00\" SCRAPER & BRUSH TOOL INNER TORQUE SLEEVE UPPER RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)",
+        "note": null
+      },
+      "quantity": {
+        "value": 144,
+        "status": "found",
+        "evidence": "QTY 144",
+        "note": null
+      },
+      "unit": {
+        "value": "SET",
+        "status": "found",
+        "evidence": "UOM SET",
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": 2,
+        "status": "found",
+        "evidence": "(ONE EACH IS EQUAL TO ONE SET OF 2 PC)",
+        "note": null
+      },
+      "material": {
+        "value": "C95510 NICKEL ALUMINUM BRONZE",
+        "status": "found",
+        "evidence": "C95510 NICKEL ALUMINUM BRONZE",
+        "note": null
+      },
+      "material_alternatives": {
+        "value": [
+          "C63000"
+        ],
+        "status": "found",
+        "evidence": "along with C63000 material... The alloy can be used as a substitute for C63000",
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "16C.pdf",
+        "status": "found",
+        "evidence": "Attachments: 16C.pdf",
+        "note": null
+      },
+      "machine_model": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": "No specific machine model or series code is mentioned for this part."
+      }
+    },
+    {
+      "part_number": {
+        "value": "ST-NRSC-7000-17C",
+        "status": "found",
+        "evidence": "ST-NRSC-7000-17C",
+        "note": null
+      },
+      "description": {
+        "value": "7.00\" SCRAPER & BRUSH TOOL LOWER FRICTION RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)",
+        "status": "found",
+        "evidence": "7.00\" SCRAPER & BRUSH TOOL LOWER FRICTION RING (ONE EACH IS EQUAL TO ONE SET OF 2 PC)",
+        "note": null
+      },
+      "quantity": {
+        "value": 144,
+        "status": "found",
+        "evidence": "QTY 144",
+        "note": null
+      },
+      "unit": {
+        "value": "SET",
+        "status": "found",
+        "evidence": "UOM SET",
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": 2,
+        "status": "found",
+        "evidence": "(ONE EACH IS EQUAL TO ONE SET OF 2 PC)",
+        "note": null
+      },
+      "material": {
+        "value": "C95510 NICKEL ALUMINUM BRONZE",
+        "status": "found",
+        "evidence": "C95510 NICKEL ALUMINUM BRONZE",
+        "note": null
+      },
+      "material_alternatives": {
+        "value": [
+          "C63000"
+        ],
+        "status": "found",
+        "evidence": "along with C63000 material... The alloy can be used as a substitute for C63000",
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "17C.pdf",
+        "status": "found",
+        "evidence": "Attachments: 17C.pdf",
+        "note": null
+      },
+      "machine_model": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": "No specific machine model or series code is mentioned for this part."
+      }
+    },
+    {
+      "part_number": {
+        "value": "ST-NRSC-7000-18C",
+        "status": "found",
+        "evidence": "ST-NRSC-7000-18C",
+        "note": null
+      },
+      "description": {
+        "value": "7.00\" SCRAPER & BRUSH TOOL UPPER FRICTION RING",
+        "status": "found",
+        "evidence": "7.00\" SCRAPER & BRUSH TOOL UPPER FRICTION RING",
+        "note": null
+      },
+      "quantity": {
+        "value": 70,
+        "status": "found",
+        "evidence": "QTY 70",
+        "note": null
+      },
+      "unit": {
+        "value": "EA",
+        "status": "found",
+        "evidence": "UOM EA",
+        "note": null
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": "C95510 NICKEL ALUMINUM BRONZE",
+        "status": "found",
+        "evidence": "C95510 NICKEL ALUMINUM BRONZE",
+        "note": null
+      },
+      "material_alternatives": {
+        "value": [
+          "C63000"
+        ],
+        "status": "found",
+        "evidence": "along with C63000 material... The alloy can be used as a substitute for C63000",
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "18C.pdf",
+        "status": "found",
+        "evidence": "Attachments: 18C.pdf",
+        "note": null
+      },
+      "machine_model": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": "No specific machine model or series code is mentioned for this part."
+      }
+    }
+  ]
+}

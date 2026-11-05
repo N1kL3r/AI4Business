@@ -1,0 +1,19 @@
+From: M.T. (Purchasing) <[Customer T]>
+To: [YC sales 1]; [YC sales 2]
+Cc: [five Customer T staff]
+Date: 13 May 2026
+Subject: Request for Quotation #TJQ0xxxx
+Attachments: JEP0089.pdf, D2365 REV-1.pdf, D2371 REV-2.pdf
+
+Hi,
+
+Can you please assist with USD FOB price and lead time for the below? Referenced drawings and specification attached.
+
+Qty 1, Part G42D2365, OUTER BUSH ECCENTRIC, supplied finish machined to standard sizes to our drawing D2365 and specification JEP0089.
+Qty 1, Part G42D2371, INNER BUSH ECCENTRIC, same terms, drawing D2371.
+
+We have a customer enquiry for the above, therefore your response by EOB Friday 15 May would be appreciated.
+
+Regards,
+M.T.
+Purchasing, Customer T (Australia)

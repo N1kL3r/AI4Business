@@ -1,0 +1,172 @@
+{
+  "header": {
+    "customer": {
+      "value": "Customer T",
+      "status": "found",
+      "evidence": "Customer T (Australia)",
+      "note": null
+    },
+    "contact": {
+      "value": "M.T.",
+      "status": "found",
+      "evidence": "M.T. (Purchasing)",
+      "note": null
+    },
+    "received_date": {
+      "value": "2026-05-13",
+      "status": "found",
+      "evidence": "Date: 13 May 2026",
+      "note": null
+    },
+    "deadline": {
+      "value": "2026-05-15",
+      "status": "found",
+      "evidence": "response by EOB Friday 15 May",
+      "note": null
+    },
+    "urgency": {
+      "value": "high",
+      "status": "needs_review",
+      "evidence": "response by EOB Friday 15 May",
+      "note": "The email specifies a tight deadline (EOB Friday), which implies high urgency, though the word 'urgent' is not explicitly used."
+    },
+    "currency": {
+      "value": "USD",
+      "status": "found",
+      "evidence": "USD FOB price",
+      "note": null
+    },
+    "incoterm": {
+      "value": "FOB",
+      "status": "found",
+      "evidence": "USD FOB price",
+      "note": null
+    },
+    "specifications": {
+      "value": "JEP0089",
+      "status": "found",
+      "evidence": "specification JEP0089",
+      "note": null
+    },
+    "language": {
+      "value": "en",
+      "status": "found",
+      "evidence": "Hi, Can you please assist...",
+      "note": null
+    }
+  },
+  "items": [
+    {
+      "part_number": {
+        "value": "G42D2365",
+        "status": "found",
+        "evidence": "Part G42D2365",
+        "note": null
+      },
+      "description": {
+        "value": "OUTER BUSH ECCENTRIC",
+        "status": "found",
+        "evidence": "OUTER BUSH ECCENTRIC",
+        "note": null
+      },
+      "quantity": {
+        "value": 1,
+        "status": "found",
+        "evidence": "Qty 1",
+        "note": null
+      },
+      "unit": {
+        "value": "EA",
+        "status": "needs_review",
+        "evidence": "Qty 1",
+        "note": "The text says 'Qty 1' without an explicit unit code. 'EA' is the standard assumption for single items, but strictly speaking the unit is not written."
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "D2365 REV-1.pdf",
+        "status": "found",
+        "evidence": "drawing D2365",
+        "note": "Mapped 'drawing D2365' text to attachment 'D2365 REV-1.pdf'."
+      },
+      "machine_model": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      }
+    },
+    {
+      "part_number": {
+        "value": "G42D2371",
+        "status": "found",
+        "evidence": "Part G42D2371",
+        "note": null
+      },
+      "description": {
+        "value": "INNER BUSH ECCENTRIC",
+        "status": "found",
+        "evidence": "INNER BUSH ECCENTRIC",
+        "note": null
+      },
+      "quantity": {
+        "value": 1,
+        "status": "found",
+        "evidence": "Qty 1",
+        "note": null
+      },
+      "unit": {
+        "value": "EA",
+        "status": "needs_review",
+        "evidence": "Qty 1",
+        "note": "The text says 'Qty 1' without an explicit unit code. 'EA' is the standard assumption for single items, but strictly speaking the unit is not written."
+      },
+      "pieces_per_unit": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "material_alternatives": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      },
+      "drawing_ref": {
+        "value": "D2371 REV-2.pdf",
+        "status": "found",
+        "evidence": "drawing D2371",
+        "note": "Mapped 'drawing D2371' text to attachment 'D2371 REV-2.pdf'."
+      },
+      "machine_model": {
+        "value": null,
+        "status": "missing",
+        "evidence": null,
+        "note": null
+      }
+    }
+  ]
+}

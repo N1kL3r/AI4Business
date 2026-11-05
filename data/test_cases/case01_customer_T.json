@@ -1,0 +1,40 @@
+{
+  "_notes": "Material is not in the email (YC quoted C94300 from spec JEP0089). Deadline is explicit.",
+  "header": {
+    "customer": "Customer T",
+    "contact": "M.T.",
+    "received_date": "2026-05-13",
+    "deadline": "2026-05-15",
+    "urgency": "high|normal",
+    "currency": "USD",
+    "incoterm": "FOB",
+    "specifications": [
+      "JEP0089"
+    ],
+    "language": "en"
+  },
+  "items": [
+    {
+      "part_number": "G42D2365",
+      "description": "OUTER BUSH ECCENTRIC",
+      "quantity": 1,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": null,
+      "material_alternatives": null,
+      "drawing_ref": "D2365",
+      "machine_model": null
+    },
+    {
+      "part_number": "G42D2371",
+      "description": "INNER BUSH ECCENTRIC",
+      "quantity": 1,
+      "unit": null,
+      "pieces_per_unit": null,
+      "material": null,
+      "material_alternatives": null,
+      "drawing_ref": "D2371",
+      "machine_model": null
+    }
+  ]
+}

@@ -1,8 +1,11 @@
-# Company data stays out of this public repo (data agreement with YC).
-data/inbox/
-data/test_cases/
-data/lake/
+# The sample emails and answer keys are anonymized and shared in the repo.
+# Not shared: the raw copies the app writes (they duplicate data/inbox), emails pasted during testing,
+# the original data archive, and the real past-quotes export.
+data/lake/raw/
+data/lake/processed/pasted-*
+data/history/
 group14_sample_data.zip
+.DS_Store
 
 # Executed notebooks contain email contents in their outputs.
 *.executed.ipynb

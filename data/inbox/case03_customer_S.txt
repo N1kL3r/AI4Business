@@ -1,0 +1,21 @@
+From: S.H. (Sourcing Engineer) <s.h.@[Customer S]>
+To: [YC owner]
+Date: 15 September 2023, 14:12
+Subject: FQ for Lantern Rings Q230986 and Q230987
+Attachments: Q230986, RFQ lantern rings, [Customer S], SH.zip; Q230987, Female adapters, [Customer S], SH.zip
+
+X 总，
+
+附件是泵用的铜密封件，请尽快提供报价和交货周期，谢谢！
+
+4P100346      RNG/LANTERN/4.00    TWS900-QWS
+4P100651      RNG/LANTERN/4.50    TWS900-QWS
+4P100238      RNG/LANTERN/5.00    TWS900-QWS
+4P100145      RNG/LANTERN/5.50    TWS900-QWS
+4P100345      ADPTR/PKG/FMLE/4    TWS900-QWS
+4P100650      ADPTR/PKG/FMLE/4.5  TWS900-QWS
+4P100239      ADPTR/PKG/FMLE/5    TWS900-QWS
+4P107777      ADPTR/PKG/5.50 T900-QWS/HI PERF/
+
+Thanks. Best regards,
+S.H., Sourcing Engineer, [Customer S], Shanghai

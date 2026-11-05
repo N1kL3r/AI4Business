@@ -1,0 +1,103 @@
+{
+  "header": {
+    "customer": {"value": "Customer S", "status": "found", "evidence": "From: S.H. (Sourcing Engineer) <s.h.@[Customer S]>", "note": null},
+    "contact": {"value": "S.H.", "status": "found", "evidence": "From: S.H. (Sourcing Engineer) <s.h.@[Customer S]>", "note": null},
+    "received_date": {"value": "2023-09-15", "status": "found", "evidence": "Date: 15 September 2023, 14:12", "note": null},
+    "deadline": {"value": null, "status": "missing", "evidence": null, "note": null},
+    "urgency": {"value": "normal", "status": "found", "evidence": "4P100346      RNG/LANTERN/4.00    TWS900-QWS\n4P100651      RNG/LANTERN/4.50    TWS900-QWS\n4P100238      RNG/LANTERN/5.00    TWS900-QWS\n4P100145      RNG/LANTERN/5.50    TWS900-QWS\n4P100345      ADPTR/PKG/FMLE/4    TWS900-QWS\n4P100650      ADPTR/PKG/FMLE/4.5  TWS900-QWS\n4P100239      ADPTR/PKG/FMLE/5    TWS900-QWS\n4P107777      ADPTR/PKG/5.50 T900-QWS/HI PERF/", "note": "No specific deadline mentioned, but multiple part numbers suggest a normal urgency."},
+    "currency": {"value": null, "status": "missing", "evidence": null, "note": null},
+    "incoterm": {"value": null, "status": "missing", "evidence": null, "note": null},
+    "specifications": {"value": ["TWS900-QWS", "T900-QWS/HI PERF"], "status": "found", "evidence": "4P100346      RNG/LANTERN/4.00    TWS900-QWS\n4P100651      RNG/LANTERN/4.50    TWS900-QWS\n4P100238      RNG/LANTERN/5.00    TWS900-QWS\n4P100145      RNG/LANTERN/5.50    TWS900-QWS\n4P100345      ADPTR/PKG/FMLE/4    TWS900-QWS\n4P100650      ADPTR/PKG/FMLE/4.5  TWS900-QWS\n4P100239      ADPTR/PKG/FMLE/5    TWS900-QWS\n4P107777      ADPTR/PKG/5.50 T900-QWS/HI PERF/", "note": null},
+    "language": {"value": "zh", "status": "found", "evidence": "X 总，\n附件是泵用的铜密封件，请尽快提供报价和交货周期，谢谢！", "note": null}
+  },
+  "items": [
+    {
+      "part_number": {"value": "4P100346", "status": "found", "evidence": "4P100346      RNG/LANTERN/4.00    TWS900-QWS", "note": null},
+      "description": {"value": "RNG/LANTERN/4.00", "status": "found", "evidence": "4P100346      RNG/LANTERN/4.00    TWS900-QWS", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "4P100346      RNG/LANTERN/4.00    TWS900-QWS", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "4P100346      RNG/LANTERN/4.00    TWS900-QWS", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "Q230986", "status": "found", "evidence": "Attachments: Q230986, RFQ lantern rings, [Customer S], SH.zip", "note": null},
+      "machine_model": {"value": "TWS900-QWS", "status": "found", "evidence": "4P100346      RNG/LANTERN/4.00    TWS900-QWS", "note": null}
+    },
+    {
+      "part_number": {"value": "4P100651", "status": "found", "evidence": "4P100651      RNG/LANTERN/4.50    TWS900-QWS", "note": null},
+      "description": {"value": "RNG/LANTERN/4.50", "status": "found", "evidence": "4P100651      RNG/LANTERN/4.50    TWS900-QWS", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "4P100651      RNG/LANTERN/4.50    TWS900-QWS", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "4P100651      RNG/LANTERN/4.50    TWS900-QWS", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "Q230986", "status": "found", "evidence": "Attachments: Q230986, RFQ lantern rings, [Customer S], SH.zip", "note": null},
+      "machine_model": {"value": "TWS900-QWS", "status": "found", "evidence": "4P100651      RNG/LANTERN/4.50    TWS900-QWS", "note": null}
+    },
+    {
+      "part_number": {"value": "4P100238", "status": "found", "evidence": "4P100238      RNG/LANTERN/5.00    TWS900-QWS", "note": null},
+      "description": {"value": "RNG/LANTERN/5.00", "status": "found", "evidence": "4P100238      RNG/LANTERN/5.00    TWS900-QWS", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "4P100238      RNG/LANTERN/5.00    TWS900-QWS", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "4P100238      RNG/LANTERN/5.00    TWS900-QWS", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "Q230986", "status": "found", "evidence": "Attachments: Q230986, RFQ lantern rings, [Customer S], SH.zip", "note": null},
+      "machine_model": {"value": "TWS900-QWS", "status": "found", "evidence": "4P100238      RNG/LANTERN/5.00    TWS900-QWS", "note": null}
+    },
+    {
+      "part_number": {"value": "4P100145", "status": "found", "evidence": "4P100145      RNG/LANTERN/5.50    TWS900-QWS", "note": null},
+      "description": {"value": "RNG/LANTERN/5.50", "status": "found", "evidence": "4P100145      RNG/LANTERN/5.50    TWS900-QWS", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "4P100145      RNG/LANTERN/5.50    TWS900-QWS", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "4P100145      RNG/LANTERN/5.50    TWS900-QWS", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "Q230986", "status": "found", "evidence": "Attachments: Q230986, RFQ lantern rings, [Customer S], SH.zip", "note": null},
+      "machine_model": {"value": "TWS900-QWS", "status": "found", "evidence": "4P100145      RNG/LANTERN/5.50    TWS900-QWS", "note": null}
+    },
+    {
+      "part_number": {"value": "4P100345", "status": "found", "evidence": "4P100345      ADPTR/PKG/FMLE/4    TWS900-QWS", "note": null},
+      "description": {"value": "ADPTR/PKG/FMLE/4", "status": "found", "evidence": "4P100345      ADPTR/PKG/FMLE/4    TWS900-QWS", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "4P100345      ADPTR/PKG/FMLE/4    TWS900-QWS", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "4P100345      ADPTR/PKG/FMLE/4    TWS900-QWS", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "Q230987", "status": "found", "evidence": "Attachments: Q230986, RFQ lantern rings, [Customer S], SH.zip; Q230987, Female adapters, [Customer S], SH.zip", "note": null},
+      "machine_model": {"value": "TWS900-QWS", "status": "found", "evidence": "4P100345      ADPTR/PKG/FMLE/4    TWS900-QWS", "note": null}
+    },
+    {
+      "part_number": {"value": "4P100650", "status": "found", "evidence": "4P100650      ADPTR/PKG/FMLE/4.5  TWS900-QWS", "note": null},
+      "description": {"value": "ADPTR/PKG/FMLE/4.5", "status": "found", "evidence": "4P100650      ADPTR/PKG/FMLE/4.5  TWS900-QWS", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "4P100650      ADPTR/PKG/FMLE/4.5  TWS900-QWS", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "4P100650      ADPTR/PKG/FMLE/4.5  TWS900-QWS", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "Q230987", "status": "found", "evidence": "Attachments: Q230986, RFQ lantern rings, [Customer S], SH.zip; Q230987, Female adapters, [Customer S], SH.zip", "note": null},
+      "machine_model": {"value": "TWS900-QWS", "status": "found", "evidence": "4P100650      ADPTR/PKG/FMLE/4.5  TWS900-QWS", "note": null}
+    },
+    {
+      "part_number": {"value": "4P100239", "status": "found", "evidence": "4P100239      ADPTR/PKG/FMLE/5    TWS900-QWS", "note": null},
+      "description": {"value": "ADPTR/PKG/FMLE/5", "status": "found", "evidence": "4P100239      ADPTR/PKG/FMLE/5    TWS900-QWS", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "4P100239      ADPTR/PKG/FMLE/5    TWS900-QWS", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "4P100239      ADPTR/PKG/FMLE/5    TWS900-QWS", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "Q230987", "status": "found", "evidence": "Attachments: Q230986, RFQ lantern rings, [Customer S], SH.zip; Q230987, Female adapters, [Customer S], SH.zip", "note": null},
+      "machine_model": {"value": "TWS900-QWS", "status": "found", "evidence": "4P100239      ADPTR/PKG/FMLE/5    TWS900-QWS", "note": null}
+    },
+    {
+      "part_number": {"value": "4P107777", "status": "found", "evidence": "4P107777      ADPTR/PKG/5.50 T900-QWS/HI PERF/", "note": null},
+      "description": {"value": "ADPTR/PKG/5.50 T900-QWS/HI PERF", "status": "found", "evidence": "4P107777      ADPTR/PKG/5.50 T900-QWS/HI PERF/", "note": null},
+      "quantity": {"value": 1, "status": "found", "evidence": "4P107777      ADPTR/PKG/5.50 T900-QWS/HI PERF/", "note": null},
+      "unit": {"value": "EA", "status": "found", "evidence": "4P107777      ADPTR/PKG/5.50 T900-QWS/HI PERF/", "note": null},
+      "pieces_per_unit": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "material": {"value": "missing", "status": "missing", "evidence": null, "note": null},
+      "material_alternatives": {"value": null, "status": "missing", "evidence": null, "note": null},
+      "drawing_ref": {"value": "Q230987", "status": "found", "evidence": "Attachments: Q230986, RFQ lantern rings, [Customer S], SH.zip; Q230987, Female adapters, [Customer S], SH.zip", "note": null},
+      "machine_model": {"value": "T900-QWS/HI PERF", "status": "found", "evidence": "4P107777      ADPTR/PKG/5.50 T900-QWS/HI PERF/", "note": null}
+    }
+  ]
+}

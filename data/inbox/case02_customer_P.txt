@@ -1,0 +1,42 @@
+From: S.S. <sales@[Customer P]>
+To: V. <[YC]>
+Date: 16 June 2025, 18:08
+Subject: RFQ# 0435 Turnkey - 4140RM - Part#2
+Attachments: 15C.pdf, 16C.pdf, 17C.pdf, 18C.pdf
+
+Dear V.,
+Please go through below inquiry and quote your best price and
+delivery lead time urgently.
+
+Item              Item Description                        UOM  QTY  RM Grade
+ST-NRSC-7000-15C  7.00" SCRAPER & BRUSH TOOL INNER        SET  144  C95510 NICKEL
+                  TORQUE SLEEVE LOWER RING (ONE EACH                ALUMINUM BRONZE
+                  IS EQUAL TO ONE SET OF 2 PC)
+ST-NRSC-7000-16C  7.00" SCRAPER & BRUSH TOOL INNER        SET  144  C95510 NICKEL
+                  TORQUE SLEEVE UPPER RING (ONE EACH                ALUMINUM BRONZE
+                  IS EQUAL TO ONE SET OF 2 PC)
+ST-NRSC-7000-17C  7.00" SCRAPER & BRUSH TOOL LOWER        SET  144  C95510 NICKEL
+                  FRICTION RING (ONE EACH IS EQUAL                  ALUMINUM BRONZE
+                  TO ONE SET OF 2 PC)
+ST-NRSC-7000-18C  7.00" SCRAPER & BRUSH TOOL UPPER        EA   70   C95510 NICKEL
+                  FRICTION RING                                     ALUMINUM BRONZE
+
+Material Specs:
+For the material Bronze we suggested to use one of the below.
+C95510 HT (AMS 4880) Nickel Aluminum Bronze is one of the more popular
+landing gear bushing materials specified today along with C63000 material.
+The continuous cast alloy is heat treated and exhibits high mechanical
+strength which meets the properties of C63000 (AMS 4640). The alloy can
+be used as a substitute for C63000 in many applications. C95510HT
+(AMS 4880) is available in tube form, which requires less machine time
+and results in cost savings.
+Chemistry: Cu78 min Al10 Ni5 Fe3 Mn 1.5
+Min. Mechanical Properties: 105 ksi tensile, 62.5 yield, 9% elongation
+in 4D, 192 Brinell Hardness (3000 kg load)
+Applications: Landing Gear Bushings & Bearings, Valve Guides, Stems,
+Seats, Corrosion Resistant Parts, Wear Rings, Machine Tool Parts,
+Piston Guides, Worm Wheels, Propeller Hubs, Wear Rings, Hardware,
+Worm Gears, Shafts, Sleeves
+
+Regards,
+S.S.
