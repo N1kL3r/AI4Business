@@ -11,3 +11,6 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 .venv/
+
+web/node_modules/
+web/dist/

@@ -7,5 +7,13 @@ gatherUsageStats = false
 toolbarMode = "viewer"
 
 [server]
-# Uploaded emails are small; refuse anything unusually large.
-maxUploadSize = 25
+# Uploaded files are small; refuse anything unusually large.
+maxUploadSize = 50
+
+[theme]
+base = "light"
+primaryColor = "#16324F"
+backgroundColor = "#F3F4F6"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#14202E"
+font = "sans-serif"

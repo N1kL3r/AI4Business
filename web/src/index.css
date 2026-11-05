@@ -1,0 +1,45 @@
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+@import "@fontsource/barlow-condensed/500.css";
+@import "@fontsource/barlow-condensed/600.css";
+@import "@fontsource/barlow-condensed/700.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist Variable", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, Menlo, monospace;
+  --font-cond: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --color-ink: #08090a;
+  --color-desk: #e9ebee;
+  --color-line: #d5d9de;
+  --color-sub: #f4f5f7;
+  --color-muted: #5f6672;
+  --color-signal: #ffd500;
+  --color-signal-dark: #e6bf00;
+  --color-ok: #14803c;
+  --color-bad: #d92d20;
+  --color-info: #2f5d9e;
+}
+
+body { @apply bg-desk font-sans text-[14px] text-ink antialiased; }
+* { border-radius: 0 !important; }
+
+/* caution tape, as on machine guards */
+.hazard {
+  background: repeating-linear-gradient(-45deg, var(--color-signal) 0 9px, var(--color-ink) 9px 18px);
+}
+.hazard-anim { animation: slide 1s linear infinite; background-size: 25.5px 25.5px; }
+@keyframes slide { to { background-position: 25.5px 0; } }
+
+/* small caps label used for every field name, like the labels on a drawing */
+.cap { @apply font-cond text-[12.5px] font-semibold uppercase tracking-[0.1em] text-muted; }
+
+/* drawing sheet: corner ticks like crop marks */
+.sheet { position: relative; background: #fff; border: 1px solid var(--color-ink); }
+.sheet::before, .sheet::after { content: ""; position: absolute; width: 14px; height: 14px; border: 2px solid var(--color-ink); pointer-events: none; }
+.sheet::before { top: -7px; left: -7px; border-right: 0; border-bottom: 0; }
+.sheet::after { bottom: -7px; right: -7px; border-left: 0; border-top: 0; }
+.grid-paper {
+  background-image: linear-gradient(var(--color-line) 1px, transparent 1px), linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+  background-size: 24px 24px; background-position: -1px -1px;
+}

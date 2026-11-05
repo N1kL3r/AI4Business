@@ -6,8 +6,8 @@ import pandas as pd
 from .checks import CheckResult
 from .schema import Extraction, Status
 
-ICONS = {Status.FOUND: "✅ found", Status.MISSING: "❌ missing",
-         Status.INFERRED: "🔵 inferred", Status.NEEDS_REVIEW: "⚠️ check"}
+LABELS = {Status.FOUND: "found", Status.MISSING: "missing", Status.INFERRED: "assumed", Status.NEEDS_REVIEW: "check"}
+MARKS = {Status.FOUND: "", Status.MISSING: "[missing]", Status.INFERRED: "[assumed]", Status.NEEDS_REVIEW: "[check]"}
 
 
 def _show(value) -> str:
@@ -17,16 +17,16 @@ def _show(value) -> str:
 
 
 def header_table(ex: Extraction) -> pd.DataFrame:
-    return pd.DataFrame([{"field": k, "value": _show(f.value), "status": ICONS[f.status],
+    return pd.DataFrame([{"field": k, "value": _show(f.value), "status": LABELS[f.status],
                           "evidence": f.evidence or "", "note": f.note or ""} for k, f in ex.header.items()])
 
 
 def items_table(ex: Extraction, fields=("part_number", "description", "quantity", "unit", "pieces_per_unit",
                                         "material", "drawing_ref", "machine_model")) -> pd.DataFrame:
-    """One row per part. Each cell shows the value with a status icon."""
+    """One row per part. A value that is not plainly found carries a [missing] / [assumed] / [check] mark."""
     rows = []
     for item in ex.items:
-        rows.append({k: f"{ICONS[item[k].status].split()[0]} {_show(item[k].value)}".strip() for k in fields})
+        rows.append({k: f"{_show(item[k].value)} {MARKS[item[k].status]}".strip() for k in fields})
     return pd.DataFrame(rows)
 
 
@@ -38,11 +38,11 @@ def issues_table(result: CheckResult) -> pd.DataFrame:
 
 def evidence_table(ex: Extraction) -> pd.DataFrame:
     """Every value with the email text it was taken from, header first, then each part."""
-    rows = [{"where": "inquiry", "field": k, "value": _show(f.value), "status": ICONS[f.status],
+    rows = [{"where": "inquiry", "field": k, "value": _show(f.value), "status": LABELS[f.status],
              "evidence": f.evidence or "", "note": f.note or ""} for k, f in ex.header.items()]
     for item in ex.items:
         part = item["part_number"].value or "?"
-        rows += [{"where": part, "field": k, "value": _show(f.value), "status": ICONS[f.status],
+        rows += [{"where": part, "field": k, "value": _show(f.value), "status": LABELS[f.status],
                   "evidence": f.evidence or "", "note": f.note or ""} for k, f in item.items()
                   if k != "past_quotes"]  # listed in full in its own table
     return pd.DataFrame(rows)

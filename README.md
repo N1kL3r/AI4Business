@@ -32,11 +32,16 @@ For the LLM part, install [Ollama](https://ollama.com) and pull a model (runs lo
 ollama pull qwen3.5:9b      # or qwen3.5:4b on a laptop with 8 GB RAM
 ```
 
-Start the app (opens in your browser at http://localhost:8501):
+Build the interface once (needs Node.js 20+), then start the app (opens at http://localhost:8000):
 
 ```bash
-streamlit run app.py
+cd web && npm install && npm run build && cd ..
+uvicorn api:app --port 8000
 ```
+
+The interface is a React + TypeScript + Tailwind app in `web/`; `api.py` is a thin FastAPI layer over the Python
+engine in `quotetool/`. To work on the interface with live reload, run `uvicorn api:app --reload` and, in `web/`, `npm run dev`
+(http://localhost:5173). The earlier Streamlit version still works with `streamlit run app.py`.
 
 For the evaluation, open `notebooks/01_extraction.ipynb`. Without Ollama the notebook still runs on the rule-based baseline.
 Tests: `python -m pytest tests`.
@@ -54,15 +59,15 @@ The app compares every part with an archive of past quotes. Put the real export 
 to the original quote: `currency`, `quoted_date`, `customer`, `quote_id`, `quantity`. Without that file the app
 falls back to the made-up `examples/past_quotes_example.csv` and says so in the sidebar. The app lists every past quote behind a match (newest first, with the row in the file) in the
 "Past quotes for these parts" table, and adds a line per part to "What needs attention". A "similar" match is a *different*
-part, so it is marked ⚠️ and a person must check its price.
+part, so it is marked "check" and a person must check its price.
 
 ## Running the app for others
 
 The app runs where Ollama runs, and the emails never leave that computer.
 
-- **Demo / single user:** `streamlit run app.py` on a laptop with Ollama.
+- **Demo / single user:** `uvicorn api:app --port 8000` on a laptop with Ollama.
 - **Sales team in the office:** run it on one office PC or server with Ollama (enough RAM, ideally a GPU), started with
-  `streamlit run app.py --server.address 0.0.0.0`. Colleagues open `http://<that-computer's-IP>:8501` on the company network.
+  `uvicorn api:app --host 0.0.0.0 --port 8000`. Colleagues open `http://<that-computer's-IP>:8000` on the company network.
   Do not expose it to the internet: there is no login.
-- **Not suitable:** Streamlit Community Cloud or other public hosting. They cannot run Ollama, so emails would have to go to
+- **Not suitable:** Public hosting. They cannot run Ollama, so emails would have to go to
   an outside AI service, and the data would leave the company.

@@ -142,3 +142,48 @@ def match_issues(items: list[dict]) -> list[Issue]:
         else:
             issues.append(Issue(where, "past_quotes", "info", "No similar past quote found."))
     return issues
+
+
+def _key(name) -> str:
+    return "".join(c for c in str(name or "").lower() if c.isalnum())
+
+
+def same_customer(a, b) -> bool:
+    """'Customer T', 'customer t (Australia)' and 'CUSTOMER T' are one customer. Short names must match exactly."""
+    a, b = _key(a), _key(b)
+    if not a or not b:
+        return False
+    return a == b or (min(len(a), len(b)) >= 5 and (a in b or b in a))
+
+
+def match_customer(items: list[dict], history: list[dict], customer) -> list[dict]:
+    """For a known customer, add `customer_price`: what we last quoted this customer for the same part.
+
+    Same part number only (a similar part is not a loyal-customer price). Sets nothing but a missing field
+    when the customer is unknown or has never been quoted this part, so the app can say so.
+    """
+    mine = [h for h in history if same_customer(h.get("customer"), customer)]
+    for item in items:
+        pn = _normalize(item["part_number"].value)
+        own = [h for h in mine if pn and _normalize(h["part_number"]) == pn]
+        if not own:
+            item["customer_price"] = Field(status=Status.MISSING)
+            item["customer_quotes"] = Field(value=[], status=Status.MISSING)
+            continue
+        own.sort(key=lambda h: (h.get("quoted_date") or "", h.get("source_row") or 0), reverse=True)
+        item["customer_price"] = Field(value=own[0]["price"], status=Status.INFERRED,
+                                       note=f"last quoted to this customer ({_origin(own[0])})")
+        item["customer_quotes"] = Field(value=own, status=Status.INFERRED)
+    return items
+
+
+def customer_issues(items: list[dict], customer) -> list[Issue]:
+    issues = []
+    for n, item in enumerate(items, 1):
+        q = (item.get("customer_quotes").value if "customer_quotes" in item else None) or []
+        if q:
+            where = f"line {n} ({item['part_number'].value or '?'})"
+            issues.append(Issue(where, "customer_price", "info",
+                                f"Last quoted to {q[0].get('customer') or customer}: {_money(q[0])} ({_origin(q[0])}). "
+                                "Check whether special terms apply."))
+    return issues

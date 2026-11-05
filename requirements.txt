@@ -5,3 +5,9 @@ jupyter
 streamlit>=1.40
 pytest
 scikit-learn
+pypdf            # read PDF files
+extract-msg      # read Outlook .msg files (optional)
+python-docx      # write the quotation as a Word file
+fastapi
+uvicorn
+python-multipart
